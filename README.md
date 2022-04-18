@@ -19,7 +19,7 @@ go get github.com/aliyun/aliyun-tablestore-go-sql-driver
 ```go
 import (
     "database/sql"
-    "time"
+    "fmt"
     _ "github.com/aliyun/aliyun-tablestore-go-sql-driver"
 )
 
@@ -30,7 +30,7 @@ if err != nil {
     panic(err)
 }
 
-rows, err := db.Query("SELECT * FROM trips WHERE trip_id = ?", 1688)
+rows, err := db.Query("SELECT trip_id, duration, bike_number, is_member FROM trips WHERE trip_id = ?", 1688)
 if err != nil {
     panic(err)
 }
@@ -71,3 +71,13 @@ schema://access_key_id:access_key_secret@endpoint/instance_name[?param1=value1&.
 - `requestTimeout`为请求超时时间
 - `maxRetryTime`为最大触发重试时间
 - `maxIdleConnections`为最大空闲连接数
+
+## 贡献代码
+ - 我们非常欢迎大家为TableStore Go SQL Driver以及其他阿里云SDK贡献代码
+
+## 联系我们
+- [阿里云TableStore官方网站](http://www.aliyun.com/product/ots)
+- [阿里云TableStore官方论坛](http://bbs.aliyun.com)
+- [阿里云TableStore官方文档中心](https://help.aliyun.com/product/8315004_ots.html)
+- [阿里云云栖社区](http://yq.aliyun.com)
+- [阿里云工单系统](https://workorder.console.aliyun.com/#/ticket/createIndex)
